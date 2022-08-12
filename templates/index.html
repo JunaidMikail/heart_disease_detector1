@@ -1,0 +1,111 @@
+<!-- This is GUI for Heart disease Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('static/project.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the  heart disease -->
+    <center>
+         <br>
+            <br>
+               <br>
+                  <br>
+    <form action="{{ url_for('predict')}}"method="post">
+       
+          <br>
+            <br>
+              <br>
+                <br>
+                  <br>
+                    <br>
+                      <br>
+                        <br>
+                          <br>
+                           <br>
+                            <br>
+        <h1>Enter the value of heart features >>></h1>
+        
+    	<input type="text" name="age" placeholder="age" required="required" />
+        <input type="text" name="sex" placeholder="sex" required="required" />
+		<input type="text" name="chestpaintype" placeholder="chestpaintype" required="required" />
+        <input type="text" name="cholesterol" placeholder="cholesterol" required="required" />
+            <input type="text" name="fastingbs" placeholder="fastingbs" required="required" />
+		
+        
+
+		<br>
+    	<input type="text" name="maxhr" placeholder="maxhr" required="required" />
+        <input type="text" name="exerciseangina" placeholder="exerciseangina" required="required" />
+		<input type="text" name="oldpeak" placeholder="oldpeak" required="required" />
+        <input type="text" name="st_slope" placeholder="st_slope" required="required" />
+        <input type="text" name="restingbp" placeholder="restingbp" required="required" />
+
+
+
+
+        <br>
+    	<input type="text" name="restingecg" placeholder="restingecg" required="required" />
+
+
+
+
+      
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="https://github.com/prem-creator/heart-detector.git" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Heart disease</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
